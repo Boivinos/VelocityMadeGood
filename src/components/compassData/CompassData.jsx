@@ -10,12 +10,25 @@ align-items: center;
 justify-content: center;
 `
 
+const ParagraphBox = styled.p`
+margin:0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;`
 
-const CompassData = ({ degree, setDegree }) => {
+const ValidateButton = styled.button`
+margin-top:10px;
+padding: 10px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;`
+
+
+const CompassData = ({ ObservedDegree, ChosenDegree, viewCap, setviewCap, ChosenWindDegree }) => {
     return (
         <CompassDataBox>
-            <p>Cap: {degree} degrés</p>
-            <p>pouet !</p>
+            <ParagraphBox>Cap {viewCap ? "bateau" : "vent"} observé: {ObservedDegree} degrés</ParagraphBox>
+            <ParagraphBox>Cap bateau choisi: {ChosenDegree} degrés</ParagraphBox>
+            <ParagraphBox>Cap vent choisi: {ChosenWindDegree} degrés</ParagraphBox>
+            <ValidateButton
+                onClick={() => setviewCap(false)}
+            >Valider le cap</ValidateButton>
         </CompassDataBox>
     );
 };

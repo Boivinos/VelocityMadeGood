@@ -1,5 +1,5 @@
 $black: #1b1e23;
-$size: 400px;
+$size: 500px;
 $white: #f4eed7;
 $feature : #4b9aaa;
 
@@ -17,7 +17,7 @@ $feature : #4b9aaa;
     &__indicator {
         position: absolute;
         left: calc(50% - 1px);
-        width: 2px;
+        width: 10px;
         background: $white;
         transform-origin: bottom center;
         z-index: 2;
@@ -38,6 +38,16 @@ $feature : #4b9aaa;
 
 }
 
+
+
+.Observed {
+    background-color: red;
+}
+
+.ObservedBlue {
+    background-color: blue;
+}
+
 @for $i from 1 through 360 {
     section:hover:nth-of-type(#{$i}) {
         background-color: red;
@@ -45,11 +55,14 @@ $feature : #4b9aaa;
 }
 
 @for $i from 1 through 360 {
+    #blue:hover:nth-of-type(#{$i}) {
+        background-color: blue;
+    }
+}
+
+@for $i from 1 through 360 {
     section:nth-of-type(#{$i}) {
-        $hoverAngle: calc(1deg * #{$i});
-        transform: rotateZ($hoverAngle);
-
-
+        transform: rotateZ(calc(1deg * #{$i}));
     }
 }
 
