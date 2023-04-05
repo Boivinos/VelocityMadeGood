@@ -1,0 +1,55 @@
+$black: #1b1e23;
+$size: 400px;
+$white: #f4eed7;
+$feature : #4b9aaa;
+
+.clock {
+    height: $size;
+    width: $size;
+    border-radius: #{$size / 2};
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+
+    &__indicator {
+        position: absolute;
+        left: calc(50% - 1px);
+        width: 2px;
+        background: $white;
+        transform-origin: bottom center;
+        z-index: 2;
+        border-radius: 1px;
+    }
+
+    &__indicator {
+        height: #{($size / 2) - 2};
+        border-top: 2px solid $feature;
+        background: none;
+    }
+
+    &__indicator:nth-of-type(5n) {
+        opacity: 1;
+        height: #{($size / 2) - 7};
+        border-top: 7px solid $white;
+    }
+
+}
+
+@for $i from 1 through 360 {
+    section:hover:nth-of-type(#{$i}) {
+        background-color: red;
+    }
+}
+
+@for $i from 1 through 360 {
+    section:nth-of-type(#{$i}) {
+        transform: rotateZ(calc(1deg * #{$i}));
+    }
+}
+
+@keyframes time {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
