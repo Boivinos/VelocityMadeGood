@@ -3,10 +3,10 @@ import CompassIndicators from './CompassIndicators/CompassIndicators';
 
 
 
-const Compass = () => {
+const Compass = ({ degree, setDegree }) => {
     return (
         <div className='clock'>
-            <CompassIndicators />
+            <CompassIndicators degree={degree} setDegree={setDegree} />
         </div>
     );
 };

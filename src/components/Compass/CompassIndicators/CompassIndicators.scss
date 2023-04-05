@@ -3,6 +3,7 @@ $size: 400px;
 $white: #f4eed7;
 $feature : #4b9aaa;
 
+
 .clock {
     height: $size;
     width: $size;
@@ -10,6 +11,7 @@ $feature : #4b9aaa;
     display: flex;
     justify-content: center;
     position: relative;
+    width: 50%;
 
 
     &__indicator {
@@ -44,7 +46,10 @@ $feature : #4b9aaa;
 
 @for $i from 1 through 360 {
     section:nth-of-type(#{$i}) {
-        transform: rotateZ(calc(1deg * #{$i}));
+        $hoverAngle: calc(1deg * #{$i});
+        transform: rotateZ($hoverAngle);
+
+
     }
 }
 
