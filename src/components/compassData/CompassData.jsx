@@ -20,14 +20,22 @@ padding: 10px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;`
 
 
-const CompassData = ({ ObservedDegree, ChosenDegree, viewCap, setviewCap, ChosenWindDegree }) => {
+const CompassData = ({ ObservedDegree, ChosenDegree, viewCap, setviewCap, ChosenWindDegree, defineTack, defineAllure }) => {
+
+    const handleClick = () => {
+        viewCap ?
+            setviewCap(false) :
+            (defineTack(ChosenDegree, ChosenWindDegree),
+                defineAllure(ChosenDegree, ChosenWindDegree))
+    }
+
     return (
         <CompassDataBox>
             <ParagraphBox>Cap {viewCap ? "bateau" : "vent"} observé: {ObservedDegree} degrés</ParagraphBox>
             <ParagraphBox>Cap bateau choisi: {ChosenDegree} degrés</ParagraphBox>
             <ParagraphBox>Cap vent choisi: {ChosenWindDegree} degrés</ParagraphBox>
             <ValidateButton
-                onClick={() => setviewCap(false)}
+                onClick={() => handleClick()}
             >Valider le cap</ValidateButton>
         </CompassDataBox>
     );

@@ -12,12 +12,13 @@ $feature : #4b9aaa;
     justify-content: center;
     position: relative;
     width: 50%;
+    z-index: 0;
 
 
     &__indicator {
         position: absolute;
         left: calc(50% - 1px);
-        width: 10px;
+        width: 12px;
         background: $white;
         transform-origin: bottom center;
         z-index: 2;
@@ -34,6 +35,13 @@ $feature : #4b9aaa;
         opacity: 1;
         height: #{($size / 2) - 7};
         border-top: 7px solid $white;
+        z-index: 3;
+    }
+
+    &__indicator:nth-of-type(90n) {
+        opacity: 1;
+        height: #{($size / 2) - 15};
+        border-top: 15px solid $white;
     }
 
 }
@@ -60,7 +68,7 @@ $feature : #4b9aaa;
     }
 }
 
-@for $i from 1 through 360 {
+@for $i from 0 through 359 {
     section:nth-of-type(#{$i}) {
         transform: rotateZ(calc(1deg * #{$i}));
     }
