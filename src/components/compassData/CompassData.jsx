@@ -31,9 +31,9 @@ const CompassData = ({ ObservedDegree, ChosenDegree, viewCap, setviewCap, Chosen
 
     return (
         <CompassDataBox>
-            <ParagraphBox>Cap {viewCap ? "bateau" : "vent"} observé: {ObservedDegree} degrés</ParagraphBox>
-            <ParagraphBox>Cap bateau choisi: {ChosenDegree} degrés</ParagraphBox>
-            <ParagraphBox>Cap vent choisi: {ChosenWindDegree} degrés</ParagraphBox>
+            <ParagraphBox>Réglage {viewCap ? "route" : "direction du vent"} : {ObservedDegree} degrés</ParagraphBox>
+            <ParagraphBox>Route sélectionnée: {ChosenDegree} degrés</ParagraphBox>
+            <ParagraphBox>Direction du vent sélectionnée: {ChosenWindDegree} degrés</ParagraphBox>
             <ValidateButton
                 onClick={() => handleClick()}
             >Valider le cap</ValidateButton>

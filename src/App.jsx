@@ -7,8 +7,22 @@ import CompassIndicators from "./components/Compass/CompassIndicators"
 const Background = styled.div`
 background: black;
 display: flex;
+flex-direction:column;
+justify-content:space-between;
+color: white;
+height:100vh;`
+
+const MainContentBox = styled.div`
+display: flex;
 justify-content:center;
-color: white;`
+height: 70%;
+`
+const SecondContentBox = styled.div`
+display: flex;
+justify-content:center;
+align-items:center;
+height: 30%;
+`
 
 function App() {
 
@@ -61,9 +75,14 @@ function App() {
   return (
     <div>
       < Background>
-        < AppInterface tack={tack} allure={allure} resetData={resetData} />
-        <CompassIndicators indicators={indicators} setIndicators={setIndicators} IndicatorsArray={IndicatorsArray} ObservedDegree={ObservedDegree} setObservedDegree={setObservedDegree} setChosenDegree={setChosenDegree} viewCap={viewCap} setChosenWindDegree={setChosenWindDegree} />
-        < CompassData ObservedDegree={ObservedDegree} ChosenDegree={ChosenDegree} viewCap={viewCap} setviewCap={setviewCap} ChosenWindDegree={ChosenWindDegree} defineTack={defineTack} defineAllure={defineAllure} />
+        < MainContentBox>
+          < AppInterface tack={tack} allure={allure} resetData={resetData} />
+          <CompassIndicators indicators={indicators} setIndicators={setIndicators} IndicatorsArray={IndicatorsArray} ObservedDegree={ObservedDegree} setObservedDegree={setObservedDegree} setChosenDegree={setChosenDegree} viewCap={viewCap} setChosenWindDegree={setChosenWindDegree} />
+          < CompassData ObservedDegree={ObservedDegree} ChosenDegree={ChosenDegree} viewCap={viewCap} setviewCap={setviewCap} ChosenWindDegree={ChosenWindDegree} defineTack={defineTack} defineAllure={defineAllure} />
+        </MainContentBox>
+        < SecondContentBox>
+          Pouet !
+        </SecondContentBox>
       </ Background>
     </div>
   )

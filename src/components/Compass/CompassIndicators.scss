@@ -3,6 +3,9 @@ $size: 500px;
 $white: #f4eed7;
 $feature : #4b9aaa;
 
+body {
+    margin: 0;
+}
 
 .clock {
     height: $size;

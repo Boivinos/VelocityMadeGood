@@ -10,7 +10,6 @@ const CompassIndicators = ({ ObservedDegree, setObservedDegree, setChosenDegree,
             IndicatorsArray.splice(index, 1, `clock__indicator Observed`)
             setIndicators(IndicatorsArray)
             setChosenDegree(ObservedDegree)
-
         } else {
             const updatedArray = indicators.map((el) => el === `clock__indicator ObservedBlue` ? el = "`clock__indicator`" : el = el)
             setChosenWindDegree(ObservedDegree)
