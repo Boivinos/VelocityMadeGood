@@ -3,6 +3,7 @@ import styled from "styled-components"
 import AppInterface from "./components/AppInterface/AppInterface"
 import { useState } from "react"
 import CompassIndicators from "./components/Compass/CompassIndicators"
+import VMGHandler from "./components/VMGHandler/VMGHandler"
 
 const Background = styled.div`
 background: black;
@@ -81,7 +82,7 @@ function App() {
           < CompassData ObservedDegree={ObservedDegree} ChosenDegree={ChosenDegree} viewCap={viewCap} setviewCap={setviewCap} ChosenWindDegree={ChosenWindDegree} defineTack={defineTack} defineAllure={defineAllure} />
         </MainContentBox>
         < SecondContentBox>
-          Pouet !
+          <VMGHandler/>
         </SecondContentBox>
       </ Background>
     </div>

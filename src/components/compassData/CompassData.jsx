@@ -26,7 +26,7 @@ const CompassData = ({ ObservedDegree, ChosenDegree, viewCap, setviewCap, Chosen
         viewCap ?
             setviewCap(false) :
             (defineTack(ChosenDegree, ChosenWindDegree),
-                defineAllure(ChosenDegree, ChosenWindDegree))
+                defineAllure(ChosenDegree, ChosenWindDegree))                
     }
 
     return (
